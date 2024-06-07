@@ -58,21 +58,11 @@ async fn main() -> Result<()> {
         .with_env_filter("domeneshop_ddns=debug")
         .init();
 
-    tokio::spawn(async {
-        let config = Config::from_env();
-        let mut interval = interval(Duration::from_secs(config.interval));
+    let config = Config::from_env();
+    let mut interval = interval(Duration::from_secs(config.interval));
+    interval.tick().await;
+    loop {
+        update_domains(&config).await;
         interval.tick().await;
-        loop {
-            update_domains(&config).await;
-            interval.tick().await;
-        }
-    });
-
-    for line in stdin().lock().lines() {
-        if line? == String::from("q") {
-            break;
-        }
     }
-
-    Ok(())
 }
