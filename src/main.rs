@@ -1,11 +1,10 @@
 mod config;
 
-use std::io::{stdin, BufRead, Result};
+use crate::config::Config;
 use futures::future::try_join_all;
-use reqwest::{Error, Response};
+use std::io::Result;
 use tokio::time::{interval, Duration};
 use tracing_log::log;
-use crate::config::Config;
 
 const DYNDNS_ENDPOINT: &str = "https://api.domeneshop.no/v0/dyndns/update";
 
@@ -43,9 +42,10 @@ async fn update_domain(domain: &str, config: &Config) -> anyhow::Result<()> {
 
 async fn update_domains(config: &Config) {
     log::info!("---- Updating domains ----");
-    let futures = config.domains.iter().map(|domain| {
-        update_domain(domain, config)
-    });
+    let futures = config
+        .domains
+        .iter()
+        .map(|domain| update_domain(domain, config));
     match try_join_all(futures).await {
         Err(e) => log::error!("Failed to update domains: {}", e),
         Ok(_) => {}
@@ -54,7 +54,7 @@ async fn update_domains(config: &Config) {
 
 #[tokio::main]
 async fn main() -> Result<()> {
-        tracing_subscriber::fmt()
+    tracing_subscriber::fmt()
         .with_env_filter("domeneshop_ddns=debug")
         .init();
 
