@@ -22,7 +22,7 @@ version: '3'
 services:
   domeneshop-ddns:
     container_name: domeneshop-ddns
-    image: domeneshop-ddns:latest
+    image: jnatten/domeneshop-ddns:0.1.0
     environment:
       - DOMENESHOP_TOKEN=<your_token>
       - DOMENESHOP_SECRET=<your_secret>
