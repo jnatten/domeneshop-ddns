@@ -12,7 +12,7 @@ docker run --name domeneshop-ddns \
   -e DOMENESHOP_TOKEN=<your_token> \
   -e DOMENESHOP_SECRET=<your_secret> \
   -e DDNS_DOMAINS=<your_domains> \
-  jnatten/domeneshop-ddns:0.1.0
+  jnatten/domeneshop-ddns:0.1.1
 ```
 
 ### Docker compose
@@ -22,7 +22,7 @@ version: '3'
 services:
   domeneshop-ddns:
     container_name: domeneshop-ddns
-    image: jnatten/domeneshop-ddns:0.1.0
+    image: jnatten/domeneshop-ddns:0.1.1
     environment:
       - DOMENESHOP_TOKEN=<your_token>
       - DOMENESHOP_SECRET=<your_secret>
