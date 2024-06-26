@@ -60,6 +60,7 @@ fi
 YESNO=${YESNO^^} # TO UPPERCASE
 if [[ "$YESNO" = "Y" ]]; then
   git push
+  git push --tags
 fi
 
 echo "Releasing done!"
