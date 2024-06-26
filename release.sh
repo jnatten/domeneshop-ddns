@@ -53,12 +53,12 @@ git tag "v$NEW_VERSION"
 
 read -p "Everything seems okay from here, push the changes? [Y/n]: " YESNO
 
-if [[ $YESNO = "" ]]; then
-  YESNO = "Y"
+if [[ "$YESNO" = "" ]]; then
+  YESNO="Y"
 fi
 
 YESNO=${YESNO^^} # TO UPPERCASE
-if [[ $YESNO = "Y" ]]; then
+if [[ "$YESNO" = "Y" ]]; then
   git push
 fi
 
