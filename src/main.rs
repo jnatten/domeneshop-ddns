@@ -46,10 +46,9 @@ async fn update_domains(config: &Config) {
         .domains
         .iter()
         .map(|domain| update_domain(domain, config));
-    match try_join_all(futures).await {
-        Err(e) => log::error!("Failed to update domains: {}", e),
-        Ok(_) => {}
-    };
+    if let Err(e) = try_join_all(futures).await {
+        log::error!("Failed to update domains: {}", e)
+    }
 }
 
 #[tokio::main]
