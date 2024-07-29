@@ -31,7 +31,7 @@ fn get_domains_to_update() -> Vec<String> {
         std::process::exit(1);
     };
 
-    env_value.split(",").map(|s| s.to_string()).collect()
+    env_value.split(',').map(|s| s.to_string()).collect()
 }
 
 fn get_required_env_var(var_name: &str) -> String {
