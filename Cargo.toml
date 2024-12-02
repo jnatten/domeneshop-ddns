@@ -9,6 +9,6 @@ tokio = { version = "1.41.1", features = ["full"] }
 reqwest = "0.12.9"
 anyhow = "1.0.93"
 futures = "0.3.31"
-tracing = "0.1.40"
+tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
 tracing-log = "0.2.0"
