@@ -7,7 +7,7 @@ edition = "2021"
 
 tokio = { version = "1.43.0", features = ["full"] }
 reqwest = "0.12.12"
-anyhow = "1.0.95"
+anyhow = "1.0.96"
 futures = "0.3.31"
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
