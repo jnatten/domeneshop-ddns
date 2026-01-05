@@ -6,7 +6,7 @@ edition = "2021"
 [dependencies]
 
 tokio = { version = "1.49.0", features = ["full"] }
-reqwest = "0.12.28"
+reqwest = "0.13.1"
 anyhow = "1.0.100"
 futures = "0.3.31"
 tracing = "0.1.44"
