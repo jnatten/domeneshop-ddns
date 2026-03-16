@@ -10,5 +10,5 @@ reqwest = "0.12.28"
 anyhow = "1.0.102"
 futures = "0.3.32"
 tracing = "0.1.44"
-tracing-subscriber = { version = "0.3.22", features = ["env-filter"] }
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 tracing-log = "0.2.0"
