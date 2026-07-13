@@ -1,4 +1,4 @@
-FROM rust:1.95.0 as builder
+FROM rust:1.97.0 as builder
 
 WORKDIR /usr/src/domeneshop-ddns
 COPY . .
